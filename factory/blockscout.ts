@@ -118,6 +118,7 @@ const protocolChainMap: Record<string, string> = {
   "megaeth": CHAIN.MEGAETH,
   "katana-chain": CHAIN.KATANA,
   "coti": CHAIN.COTI,
+  "mezo": CHAIN.MEZO,
   "world-mobile": CHAIN.WORLD_MOBILE,
 }
 

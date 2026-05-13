@@ -12,8 +12,13 @@ const fetch = async (options: FetchOptions): Promise<FetchResultVolume> => {
     },
   });
 
+  if (!response.volume_in_quote_units && !response.dailyVolume) {
+    throw Error(`No volume data found from fermi api ${VOLUME_ENDPOINT}`);
+  }
+
+
   return {
-    dailyVolume: Number(response.volume_in_quote_units ?? response.dailyVolume ?? 0),
+    dailyVolume: Number(response.volume_in_quote_units ?? response.dailyVolume),
   };
 };
 
